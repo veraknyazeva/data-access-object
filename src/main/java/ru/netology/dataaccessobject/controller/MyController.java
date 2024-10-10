@@ -15,10 +15,10 @@ public class MyController {
     }
 
     @GetMapping("/products/fetch-product")
-    public String getProduct(@RequestParam(name="name") String name){
+    public String getProduct(@RequestParam(name = "name") String name) {
         try {
-            return repository.getProductName(name);
-        }catch (EmptyResultDataAccessException ex){
+            return repository.getProductName(name.toLowerCase());
+        } catch (EmptyResultDataAccessException ex) {
             return "";
         }
     }
